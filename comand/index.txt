@@ -1,0 +1,9 @@
+npm install -g sass
+
+npm install --save-dev sass
+
+-->file banavya pachi
+
+sass scss/style.scss css/style.css
+
+sass --watch scss:css

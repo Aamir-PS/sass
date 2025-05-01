@@ -1,0 +1,29 @@
+// Import partials
+@import 'variables';
+@import 'mixins';
+
+// Apply styles using variables and mixins
+body {
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  @include flex-center;
+  height: 100vh;
+  background-color: $primary-color;
+  color: white;
+  @include color;
+  font-size: 2rem;
+}
+
+
+.hii{
+    display:flex !important;
+    // align-items: start;
+    justify-content: start;
+    // color: black;
+}
