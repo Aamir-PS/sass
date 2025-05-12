@@ -1,6 +1,9 @@
 // Import partials
 @import 'variables';
 @import 'mixins';
+@import 'header';
+@import 'mediaQuery';
+@import 'operators';
 
 // Global styles
 body {
@@ -40,14 +43,94 @@ h1 {
   &:first-child {
     color: $highlight-color;
   }
-  
- 
+
 }
- img {
+
+img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   margin-top: 20px;
   display: block;
 }
-  
+
+@mixin all-center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $highlight-color;
+}
+
+h2{
+  @include all-center()
+}
+
+@mixin withVar($value) {
+  border: $value;
+  border-radius: $value;
+  padding: $value;
+  margin: $value;
+}
+
+h2{
+  @include withVar(5px)
+}
+
+@mixin mix($value) {  
+  border: $value;
+  border-radius: $value;
+  // width: 150px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+@mixin mix-Def($top, $left, $bottom, $right) {  
+margin: $top $left $bottom $right;
+}
+
+.all{
+  @include mix(5px);
+  @include mix-Def(5px, 0px, 5px, 0px);
+}
+
+// extend
+/*
+.my{
+  background: #000;
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 15px;
+}
+
+.my1{
+  background: red;
+  border:2px solid #000;
+  @extend.my;
+}
+
+.my2{
+ background: yellow;
+ @extend.my;
+
+}
+ */
+ /* function */
+$container-width: 1200;
+
+ @function half($width){
+  @return $width/2 + px;
+ }
+ @function one-thired($width){
+  @return $width/3 + px;
+ }
+ @function one-fourth($width){
+  @return $width/4 + px;
+ }
+
+ .half{
+  width: one-thired($container-width);
+  padding-top: 500px;
+ }
+
+
