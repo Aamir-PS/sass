@@ -155,7 +155,138 @@ h2 {
 /* function */
 .half {
   width: 400px;
-  padding-top: 500px;
+}
+
+.v-12 {
+  font-family: uyveo8r;
+}
+
+.one, .two {
+  background: rgb(18.7864, 83.3136, 46.1492);
+  border-radius: 5%;
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+}
+
+one:hover, two:hover {
+  width: 10px;
+}
+
+a.active {
+  width: 10px;
+}
+
+a .active {
+  width: 100px;
+}
+
+.a:hover, .a_image {
+  width: 100px;
+}
+
+a#hige {
+  width: 100px;
+}
+
+a, li a {
+  width: 100px;
+}
+
+true {
+  width: 100px;
+}
+
+a, .abc {
+  width: 100px;
+}
+
+.selector-unify main a, main .selector-unify a {
+  width: 100px;
+  display: inline-block;
+  background: #000;
+}
+
+.selector-unify {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a.active, .active.link {
+  width: 100px;
+  display: inline-block;
+  background: #000;
+}
+
+.abc .info, .abc .content nav.sidebar, .content .abc nav.sidebar {
+  width: 100px;
+  display: inline-block;
+  background: #000;
+}
+
+.test {
+  font-weight: 400;
+}
+
+.test {
+  font-weight: "reg", "med", "bold";
+}
+
+.test {
+  font-weight: 400, 500, 700;
+}
+
+.test {
+  font-weight: 400, 500, 700, 100, 300;
+}
+
+.remove {
+  font-weight: 500, 700;
+}
+
+.merge {
+  font-weight: true;
+}
+
+.merge {
+  font-weight: "reg" 400;
+}
+
+.exists {
+  padding: true;
+}
+
+.root {
+  color: red;
+  /* @at-root ma aatle thi class ne perant banav se jem ke
+   .root-wapper {
+    color: green;
+  }
+  .root-wapper img {
+    width: 100%;
+  }
+  @at-root ni aape to aa type nu aave 
+
+  .root {
+    color: red;
+    }
+  .root .root-wapper {
+    color: green;
+  }
+  .root .root-wapper img {
+    width: 100%;
+  } ane niaape to uper jevu aave
+  */
+}
+.root-wapper {
+  color: green;
+}
+.root-wapper img {
+  width: 100%;
+}
+
+.item-child {
+  background: pink;
 }
 
 /*# sourceMappingURL=style.css.map */
