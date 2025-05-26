@@ -4,6 +4,7 @@
 @import 'header';
 @import 'mediaQuery';
 @import 'operators';
+@import 'loops.scss';
 
 // Global styles
 body {
@@ -335,17 +336,177 @@ $map-nth1: ("reg":400, "med":500, "bold":700);
 // aatla thi have introspection function start thay
 $num: 10px;
 $char: "Arial";
-$list:10px 20px 30px;
-$map:("reg": 400, "med":500s);
+$list: 10px 20px 30px;
+$map:("reg": 400, "med":500);
 
 // aa variable-exists che aama true ka false aave ane aapde varible dekare karye $num aapi ye ane aama kali "num aapanu
 .exists{
   padding: variable-exists(num);
 }
 
+// variable global che aama selecter ni anadar hoy to false aave ane bahar hoy to true aave
+$num1: 10px;
+.global{
+    padding: global-variable-exists(num1);
+}
+
+// variable mixin--> etle aapde agari joyu e bathama use thay to proparty marge karva te. aama mixin hoy to true kato fauls aave
+
+@mixin mixin {
+    border-radius: 50px;
+}
+.mixin{
+    padding: mixin-exists(mixin);
+}
+
+// aa che function aa uper jevu se upar mixin hato aama fungtion che fungction hoy to true aave ane ni hoy to false aave
+@function add($a, $b){
+@return $a + $b;
+}
+.function{
+    padding: function-exists(d);
+}
+
+// aa type-of function che ane aama fungtion nu type khabar pade number string ke je hoy te. aama varible aakhu aaapa nu example $num
+.type{
+    padding: type-of($num);
+}
+
+// aama je value hay te print kare ane fulse hoy to je aape type kare lu hoy te aapi de
+.inspect{
+    padding: inspect(null);
+}
+ 
+
+// aatle thi content directive start thay
+@mixin content($value){
+    --webkit-border-radius:$value;
+    --moz-border-radius:$value;
+    border-radius: $value;
+    @content;
+}
+
+// aa ma aapadathi vathare inclued karvu hoy to thase but ; kadva nu ane {} ma proparty nathava ni ane ; close kar va nu. ne @mixin ma @content; lakhava nu.
+.content{
+    @include content(5px)
+    {
+        background: #000;
+    };
+    border-style: 1px ;
+    border-style:dashed;
+}
+
+// pachi aap de aatho class aarite moklavo hoy to  aarite thase mixin ma khali content aap nu ane ane pache mixin name thi include kari aakho class apla che.
+@mixin content1{
+    @content;
+}
+@include content1{
+    .bg{
+        background: #000;
+    };
+};
+
+// pachi aaj rite containt na under selecter aapi include ne ciled aappo hoy to aaarite thase aa output--> #bgid .bgclass aavu aav se
+@mixin content1{
+    #bgid{
+        @content;
+    };
+};
+@include content1{
+    .bgclass{
+        background: #000;
+    };
+};
 
 
-// @at-root 
+
+// pachi aaj rite aa pede sudo class ma karvu hoy to --> soudo class etle :hover ne e bathu : start thay te. ema aari te kari sake
+@mixin content1{
+    .bgclass{
+        @content;
+    };
+};
+@include content1{
+    &:hover{
+        background: #000;
+    };
+};
+
+// aano aapde media qvery ma pan use kari sake 
+body{
+    background: white;
+}
+/*
+@media screen and (max-width: 1300px){
+body {
+    background: red;
+}
+}
+
+@media screen and (max-width: 1000px){
+body {
+    background: green;
+}
+}
+
+@media screen and (max-width: 700px){
+body {
+    background: yellow;
+}
+}
+*/
+
+// have aavi re media qvery ma use thase 
+
+@mixin media($max, $min){
+@media screen and (max-width:  $max) and (min-width:  $min){
+    @content;
+    }
+}
+
+// uper varible aapi ne worck thase 
+@include media(750px, 350px){
+body{
+    background: red !important;
+}
+}
+
+@include media(1500px,750px){
+    body{
+        background: green ;
+    }
+}
+
+/* atle have @media directives start thay che. aama aapde selecter aapi jeva no ane pachi ena niche media qvary nakhe to otoma tic proparty set thay jay che example --> .conatiner {
+  width: 1100px;
+  margin: 0px auto;
+}
+@media only screen and (max-width: 1150px) {
+  .conatiner {
+    width: 550px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .conatiner {
+    width: 800px;
+  }
+}
+  aavi rite
+*/
+
+.conatiner{
+    width: 1100px;
+    margin: 0px auto;
+
+    @media only screen and (max-width:1150px){
+        width: 550px;
+    }
+    @media only screen and (max-width:550px){
+        width: 800px;
+    }
+};
+
+// @at-root start thay che
 .root{
   color:red;
 /* @at-root ma aatle thi class ne perant banav se jem ke
@@ -382,14 +543,20 @@ $map:("reg": 400, "med":500s);
 .item-child{
   background: pink;
 }
+@media print{
+  .insideclose{
+    font-size: 12px;
+    color: green;
 
+    .insideclose2{
+    font-size: 12px;
+    color: green;
 
-@mixin media($a, $b){
-@media screen and (max-width: $a) and (min-width: $b){
-
-}
-}
-
-.bg{
-@include media(5, 5)
+// aa ne fungtion ni jem bi use thay jo aapde undar aarite aapi de ye to  aarite aakha prent mathi bahar nikri je alag thay jay
+    @at-root(without : media){
+      font-size: 15px;
+      color: green;
+    }
+  }
+  }
 }

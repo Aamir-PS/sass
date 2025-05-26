@@ -67,6 +67,77 @@ header nav button::selection {
   background-image: url("../dist/image/png.png");
 }
 
+p {
+  background: amir;
+  background: ans2;
+}
+p a {
+  color: green3;
+}
+
+#if-else {
+  font-size: 15px;
+  color: red;
+}
+
+.mybox {
+  background: #333;
+  color: #ffffff;
+  padding: 20px;
+  margin: 100px;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mybox2 {
+  background: #2ecc71;
+  color: #ffffff;
+  padding: 20px;
+  margin: 100px;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mybox2 h2 {
+  background: #3498db;
+}
+
+.for1 {
+  background: #000;
+}
+
+.for2 {
+  background: #000;
+}
+
+.for3 {
+  background: #000;
+}
+
+.for-1 {
+  width: 500px;
+  background-color: rgb(255, 186.9, 198.7904761905);
+}
+
+.for-2 {
+  width: 1000px;
+  background-color: rgb(255, 181.8, 194.580952381);
+}
+
+.for-3 {
+  width: 1500px;
+  background-color: rgb(255, 176.7, 190.3714285714);
+}
+
+.for-1 {
+  width: 500px;
+  background-color: rgb(255, 186.9, 198.7904761905);
+}
+
+.for-2 {
+  width: 1000px;
+  background-color: rgb(255, 181.8, 194.580952381);
+}
+
 body {
   font-family: "Arial", sans-serif;
   color: #333;
@@ -158,7 +229,7 @@ h2 {
 }
 
 .v-12 {
-  font-family: uyveo8r;
+  font-family: uwjunfb;
 }
 
 .one, .two {
@@ -256,6 +327,111 @@ a.active, .active.link {
   padding: true;
 }
 
+.global {
+  padding: true;
+}
+
+.mixin {
+  padding: true;
+}
+
+.function {
+  padding: false;
+}
+
+.type {
+  padding: number;
+}
+
+.inspect {
+  padding: null;
+}
+
+.content {
+  --webkit-border-radius:$value;
+  --moz-border-radius:$value;
+  border-radius: 5px;
+  background: #000;
+  border-style: 1px;
+  border-style: dashed;
+}
+
+.bg {
+  background: #000;
+}
+
+#bgid .bgclass {
+  background: #000;
+}
+
+.bgclass:hover {
+  background: #000;
+}
+
+body {
+  background: white;
+}
+
+/*
+@media screen and (max-width: 1300px){
+body {
+    background: red;
+}
+}
+
+@media screen and (max-width: 1000px){
+body {
+    background: green;
+}
+}
+
+@media screen and (max-width: 700px){
+body {
+    background: yellow;
+}
+}
+*/
+@media screen and (max-width: 750px) and (min-width: 350px) {
+  body {
+    background: red !important;
+  }
+}
+@media screen and (max-width: 1500px) and (min-width: 750px) {
+  body {
+    background: green;
+  }
+}
+/* atle have @media directives start thay che. aama aapde selecter aapi jeva no ane pachi ena niche media qvary nakhe to otoma tic proparty set thay jay che example --> .conatiner {
+  width: 1100px;
+  margin: 0px auto;
+}
+@media only screen and (max-width: 1150px) {
+  .conatiner {
+    width: 550px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .conatiner {
+    width: 800px;
+  }
+}
+  aavi rite
+*/
+.conatiner {
+  width: 1100px;
+  margin: 0px auto;
+}
+@media only screen and (max-width: 1150px) {
+  .conatiner {
+    width: 550px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .conatiner {
+    width: 800px;
+  }
+}
+
 .root {
   color: red;
   /* @at-root ma aatle thi class ne perant banav se jem ke
@@ -287,6 +463,21 @@ a.active, .active.link {
 
 .item-child {
   background: pink;
+}
+
+@media print {
+  .insideclose {
+    font-size: 12px;
+    color: green;
+  }
+  .insideclose .insideclose2 {
+    font-size: 12px;
+    color: green;
+  }
+}
+.insideclose .insideclose2 {
+  font-size: 15px;
+  color: green;
 }
 
 /*# sourceMappingURL=style.css.map */
