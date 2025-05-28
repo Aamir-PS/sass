@@ -138,6 +138,46 @@ p a {
   background-color: rgb(255, 181.8, 194.580952381);
 }
 
+.normal {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.italic {
+  font-weight: italic;
+  font-size: 14px;
+}
+
+.padding-10 {
+  padding-top: 10px;
+  font-size: 1050;
+}
+
+.padding-20 {
+  padding-top: 20px;
+  font-size: 1050;
+}
+
+.padding-30 {
+  padding-top: 30px;
+  font-size: 1050;
+}
+
+.padding-40 {
+  padding-top: 40px;
+  font-size: 1050;
+}
+
+.padding-50 {
+  padding-top: 50px;
+  font-size: 1050;
+}
+
 body {
   font-family: "Arial", sans-serif;
   color: #333;
@@ -229,7 +269,7 @@ h2 {
 }
 
 .v-12 {
-  font-family: uwjunfb;
+  font-family: utn9ody;
 }
 
 .one, .two {

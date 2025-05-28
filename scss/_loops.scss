@@ -114,4 +114,22 @@ $value: 54; // aamari ek blu che me agari varible aape lo but sass ma aap nu ni 
 }
 
 
+// aa ma aari te batha ne style aapaye
+$map : (normal: 12px, bold: 13px, italic: 14px);
+@each $m,$f-size,$arr in ($map){
+    .#{$m}{
+        font-weight: #{$m};
+        font-size: $f-size;
+    }
+}
 
+// atle thi have while loop chalu thay
+$i: 10;
+$f-size: 105 * $i;
+@while $i <= 50{
+    .padding-#{$i}{
+        padding-top: 1px * $i;
+        font-size: $f-size;
+    }
+    $i: $i + 10;
+}
